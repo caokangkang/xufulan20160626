@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name='viewport' content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+	<script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/swiper.min.css">
+	<link rel="stylesheet" type="text/css" href="css/animate.min.css">
+	<link rel="stylesheet" type="text/css" href="css/loading.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<title>通用</title>
+</head>
+<body>
+	<div class="load-container">
+		<div class="spinner">
+		  <div class="rect1"></div>
+		  <div class="rect2"></div>
+		  <div class="rect3"></div>
+		  <div class="rect4"></div>
+		  <div class="rect5"></div>
+		</div>
+	</div>
+	<div class="swiper-container">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide swiper-lazy" data-background="images/index/indeximg/index_bg.jpg">
+				<div class="ani" swiper-animate-effect="slideInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0.5s">
+					<img src="images/index/indeximg/index_title.png" width="100%"/>
+				</div>
+				<div class="ani" swiper-animate-effect="slideInRight" swiper-animate-duration="0.5s" swiper-animate-delay="1s">
+					<img src="images/index/indeximg/index_text.png" width="100%"/>
+				</div>
+				<div class="ani" swiper-animate-effect="slideInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="1.5s">
+					<img src="images/index/indeximg/index_car.png" width="100%"/>
+				</div>
+			</div>
+			<div class="swiper-slide swiper-lazy" id="slide1" data-background="images/index/catalogue/catalogue_bg.jpg">
+				<div class="ani" swiper-animate-effect="slideInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0.5s">
+					<img src="images/index/catalogue/catalogue.png" width="100%"/>
+				</div>
+				<div class="ani" swiper-animate-effect="slideInRight" swiper-animate-duration="0.5s" swiper-animate-delay="1s">
+					<img src="images/index/catalogue/catalogue_list.png" width="100%"/>
+				</div>
+				<canvas id="catalogue_list1"></canvas>
+				<!-- <span class="catalogue_list2"></span>
+				<span class="catalogue_list3"></span>
+				<span class="catalogue_list4"></span>
+				<span class="catalogue_list5"></span> -->
+			</div>
+			<img src="images/logo.png" class="logo">
+			<img src="images/arrow.png" class="array">
+		</div>
+	</div>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script src="js/swiper-jquery.min.js" type="text/javascript"></script>
+	<script src="js/swiper.animate1.0.2.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		var mySwiper = new Swiper('.swiper-container',{
+			direction: 'vertical',
+			noSwiping : true,
+			noSwipingClass : 'stop-swiping',
+			lazyLoading : true,
+			lazyLoadingInPrevNext : true,
+			onInit : function(swiper){
+				swiperAnimateCache(swiper); //隐藏动画元素
+				swiperAnimate(swiper); //初始化完成开始动画
+			},
+			onSlideChangeEnd : function(swiper){
+				swiperAnimate(swiper);
+			}
+		})
+
+		window.onload = function(){
+			$('.load-container').fadeOut();
+		};
+
+		//利用carvas画多边形
+		id => {
+			var canvas = document.getElementById(id);
+
+			if(canvas == null){
+				return false;
+			}
+			var context = canvas.getContext("2d");
+		}
+	</script>
+</body>
+</html>
