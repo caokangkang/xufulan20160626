@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name='viewport' content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+	<script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<title>canvas测试</title>
+</head>
+<body>
+	<canvas class="canvas" id="canvas1" width=""></canvas>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript">
+
+		/*var box = id => {
+			let can = document.getElementById(id);
+
+			let canWid = can.width;
+			let canHei = can.height;
+
+			console.log(canWid);
+			console.log(canHei);
+
+			if(can == null){
+				return false;
+			}
+			let ctx = can.getContext("2d");
+
+			// 填充矩形（x , y是横纵坐标，原点在canvas的左上角）
+			// ctx.fillRecty();
+
+			// 边框矩形，默认1px 黑色;
+			// ctx.strokeRect(x, y, width, height);
+
+			// 清除指定的矩形区域，变成透明
+			// ctx.clearRect(x, y, width, height);  //绘制动态效果是，常用来清除整个画布
+			ctx.beginPath()
+			
+			
+			ctx.strokeStyle = 'red'
+			ctx.moveTo(75,50)
+			ctx.lineTo(100,75)
+			ctx.lineTo(100,25)
+			ctx.fill();
+
+			ctx.fillStyle = 'red'
+			ctx.globalAlpha = 0.2
+
+			ctx.lineWidth = 2
+			ctx.lineCap = 'round'
+		}
+
+		box( "canvas1" )*/
+
+		let ctx = document.getElementById("canvas1").getContext("2d");
+		let lineCap = ['butt','round','square'];
+		ctx.strokeStyle = 'pink';
+		for(let i=0; i<lineCap.length;i++){
+			ctx.lineWidth = 15;
+			ctx.lineCap = lineCap[i];
+			ctx.beginPath();
+			ctx.moveTo(25+i*50,10);
+			ctx.lineTo(25+i*50,150);
+			ctx.stroke()
+		}
+		$("#canvas1").on("click",function(){
+			console.log(1);
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name='viewport' content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+	<script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/swiper.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/animate.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/loading.css">
+	<link rel="stylesheet" type="text/css" href="../css/main.css">
+	<title>通用</title>
+</head>
+<body>
+	<div class="load-container">
+		<div class="spinner">
+		  <div class="rect1"></div>
+		  <div class="rect2"></div>
+		  <div class="rect3"></div>
+		  <div class="rect4"></div>
+		  <div class="rect5"></div>
+		</div>
+	</div>
+	<div class="swiper-container">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide swiper-lazy" data-background="../images/view5/page22/page22_bg.jpg">
+				<div class="ani" swiper-animate-duration="0.5s" swiper-animate-delay="0">
+					<img data-src="../images/logo.png" width="100%" class="logo swiper-lazy"/>
+				</div>
+				<div class="ani" swiper-animate-duration="0.5s" swiper-animate-delay="0">
+					<img data-src="../images/arrow.png" width="100%" class="array swiper-lazy"/>
+				</div>
+				<div class="ani" swiper-animate-duration="0.5s" swiper-animate-delay="0">
+					<img data-src="../images/back.png" width="100%" class="catalog swiper-lazy"/>
+				</div>
+				<div class="ani" swiper-animate-effect="slideInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0.5s">
+					<img data-src="../images/view5/page22/page22_el1.png" width="100%" class="swiper-lazy"/>
+				</div>
+				<div class="ani" swiper-animate-effect="slideInRight" swiper-animate-duration="0.5s" swiper-animate-delay="1s">
+					<img data-src="../images/view5/page22/page22_el2.png" width="100%" class="swiper-lazy"/>
+				</div>
+			</div>
+			<div class="swiper-slide swiper-lazy" data-background="../images/view5/page22/page22_bg.jpg">
+				<div class="ani" swiper-animate-duration="0.5s" swiper-animate-delay="0">
+					<img data-src="../images/logo.png" width="100%" class="logo swiper-lazy"/>
+				</div>
+				<div class="ani" swiper-animate-duration="0.5s" swiper-animate-delay="0">
+					<img data-src="../images/back.png" width="100%" class="catalog swiper-lazy"/>
+				</div>
+				<div class="ani" swiper-animate-effect="slideInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="0.5s">
+					<img data-src="../images/view5/page23/page23_el1.png" width="100%" class="swiper-lazy"/>
+				</div>
+				<div class="ani" swiper-animate-effect="slideInRight" swiper-animate-duration="0.5s" swiper-animate-delay="1s">
+					<img data-src="../images/view5/page23/page23_el2.png" width="100%" class="swiper-lazy"/>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="../js/jquery.min.js" type="text/javascript"></script>
+	<script src="../js/swiper-jquery.min.js" type="text/javascript"></script>
+	<script src="../js/swiper.animate1.0.2.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		var mySwiper = new Swiper('.swiper-container',{
+			direction: 'vertical',
+			noSwiping : true,
+			noSwipingClass : 'stop-swiping',
+			lazyLoading : true,
+			lazyLoadingInPrevNext : true,
+			onInit : function(swiper){
+				swiperAnimateCache(swiper); //隐藏动画元素
+				swiperAnimate(swiper); //初始化完成开始动画
+			},
+			onSlideChangeEnd : function(swiper){
+				swiperAnimate(swiper);
+			},
+		})
+
+		$(".catalog").on("click",function(){
+			window.location = "../view5.html"
+		})
+
+		window.onload = function(){
+			$('.load-container').fadeOut();
+		};
+
+
+		/* 点击用用车建议的目录 */
+		// $(".suggestbox div:nth-child(1)").on("click",function(){
+		// 	mySwiper.slideTo(2, 1000, false);
+		// })
+		// $(".suggestbox div:nth-child(2)").on("click",function(){
+		// 	console.log(2)
+		// })
+		// $(".suggestbox div:nth-child(3)").on("click",function(){
+		// 	console.log(3)
+		// })
+		// $(".suggestbox div:nth-child(4)").on("click",function(){
+		// 	console.log(4)
+		// })
+		// $(".suggestbox div:nth-child(5)").on("click",function(){
+		// 	console.log(5)
+		// })
+		// $(".suggest1").on("click",function(){
+		// 	console.log(1)
+		// })
+	</script>
+</body>
+</html>

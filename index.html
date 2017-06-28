@@ -38,15 +38,22 @@
 					<img src="images/index/catalogue/catalogue.png" width="100%"/>
 				</div>
 				<div class="ani" swiper-animate-effect="slideInRight" swiper-animate-duration="0.5s" swiper-animate-delay="1s">
-					<img src="images/index/catalogue/catalogue_list.png" width="100%"/>
+					<img src="images/index/catalogue/catalogue_list1.png" width="100%" class="ctl ctl1"/>
 				</div>
-				<canvas id="catalogue_list1"></canvas>
-				<!-- <span class="catalogue_list2"></span>
-				<span class="catalogue_list3"></span>
-				<span class="catalogue_list4"></span>
-				<span class="catalogue_list5"></span> -->
+				<div class="ani" swiper-animate-effect="slideInRight" swiper-animate-duration="0.5s" swiper-animate-delay="1s">
+					<img src="images/index/catalogue/catalogue_list2.png" width="100%" class="ctl ctl2"/>
+				</div>
+				<div class="ani" swiper-animate-effect="slideInRight" swiper-animate-duration="0.5s" swiper-animate-delay="1s">
+					<img src="images/index/catalogue/catalogue_list3.png" width="100%" class="ctl ctl3"/>
+				</div>
+				<div class="ani" swiper-animate-effect="slideInRight" swiper-animate-duration="0.5s" swiper-animate-delay="1s">
+					<img src="images/index/catalogue/catalogue_list4.png" width="100%" class="ctl ctl4"/>
+				</div>
+				<div class="ani" swiper-animate-effect="slideInRight" swiper-animate-duration="0.5s" swiper-animate-delay="1s">
+					<img src="images/index/catalogue/catalogue_list5.png" width="100%" class="ctl ctl5"/>
+				</div>
 			</div>
-			<img src="images/logo.png" class="logo">
+			<img src="images/logo1.png" class="logo1">
 			<img src="images/arrow.png" class="array">
 		</div>
 	</div>
@@ -69,19 +76,32 @@
 			}
 		})
 
+		var slideto = window.location.search;
+		if(slideto == '?slide1'){
+			mySwiper.slideTo(0, 0, false);
+			mySwiper.slideNext();
+		};
+
 		window.onload = function(){
 			$('.load-container').fadeOut();
 		};
 
-		//利用carvas画多边形
-		id => {
-			var canvas = document.getElementById(id);
-
-			if(canvas == null){
-				return false;
-			}
-			var context = canvas.getContext("2d");
-		}
+		// 点击跳转事件
+		$(".ctl1").on("click",function(){
+			window.location = 'view1.html'
+		})
+		$(".ctl2").on("click",function(){
+			window.location = 'view2.html'
+		})
+		$(".ctl3").on("click",function(){
+			window.location = 'view3.html'
+		})
+		$(".ctl4").on("click",function(){
+			window.location = 'view4.html'
+		})
+		$(".ctl5").on("click",function(){
+			window.location = 'view5.html'
+		})
 	</script>
 </body>
 </html>
